@@ -71,7 +71,4 @@ export default UserClass;
  *      <HTML (new API data>)
  *      ccomponentDid Update
  *
- *
- *
- *
  */

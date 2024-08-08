@@ -50,7 +50,6 @@ const Header = () => {
           >
             {btnNameReact}
           </button>
-
           <li className="px-4 ">{loggedInUser}</li>
         </ul>
       </div>
