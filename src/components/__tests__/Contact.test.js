@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Contact from "../Contact";
 import "@testing-library/jest-dom";
 
@@ -46,16 +46,32 @@ describe("Contact Us Page Test Case", () => {
     expect(inputName).toBeInTheDocument();
   });
 
+  it("Should load input message inside Contact component", () => {
+    render(<Contact />);
+
+    const inputName = screen.getByPlaceholderText("message");
+
+    // Assertion
+    expect(inputName).toBeInTheDocument();
+  });
+
   it("Should load 2 input boxes on the Contact component", () => {
     render(<Contact />);
 
     // Querying
     const inputBoxes = screen.getAllByRole("textbox");
 
-    //console.log(inputBoxes.length);
-
     // Assertion
-
     expect(inputBoxes.length).toBe(2);
   });
+
+  // it("Should give an alert when we click on submit button", () => {
+  //   render(<Contact />);
+
+  //   const button = screen.getByRole("button");
+  //   fireEvent.click(button);
+  //   const alert = screen.get
+  //   // Assertion
+  //   expect(inputName).toBeInTheDocument();
+  // });
 });

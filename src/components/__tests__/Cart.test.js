@@ -28,10 +28,10 @@ it("should Load Restaurant Menu Component", async () => {
     )
   );
 
-  const accordionHeader = screen.getByText("Biriyani (5)");
+  const accordionHeader = screen.getByText("Cheese Volcano (8)");
   fireEvent.click(accordionHeader);
 
-  expect(screen.getAllByTestId("foodItems").length).toBe(5);
+  expect(screen.getAllByTestId("foodItems").length).toBe(8);
 
   expect(screen.getByText("Cart - (0 items)")).toBeInTheDocument();
 
@@ -44,11 +44,11 @@ it("should Load Restaurant Menu Component", async () => {
 
   expect(screen.getByText("Cart - (2 items)")).toBeInTheDocument();
 
-  expect(screen.getAllByTestId("foodItems").length).toBe(7);
+  expect(screen.getAllByTestId("foodItems").length).toBe(10);
 
   fireEvent.click(screen.getByRole("button", { name: "Clear Cart" }));
 
-  expect(screen.getAllByTestId("foodItems").length).toBe(5);
+  expect(screen.getAllByTestId("foodItems").length).toBe(8);
 
   expect(
     screen.getByText("Cart is empty. Add Items to the cart!")

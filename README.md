@@ -1,4 +1,4 @@
-# React FoodApp 🚀
+# React Food App 🚀
 
 
 # Parcel
@@ -22,7 +22,7 @@
 
 
 
-# React Food
+# React Food App
 
 
 /**

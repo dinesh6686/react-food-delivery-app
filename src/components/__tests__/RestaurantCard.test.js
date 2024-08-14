@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import RestaurantCard from "../RestaurantCard";
+import RestaurantCard, {withPromtedLabel} from "../RestaurantCard";
 import MOCK_DATA from "../mocks/resCardMock.json";
+import PROMOTED_MOCK_DATA from "../mocks/resCardPromotedMock.json";
 import "@testing-library/jest-dom";
 
 it("should render RestaurantCard component with props Data", () => {
@@ -12,5 +13,10 @@ it("should render RestaurantCard component with props Data", () => {
 });
 
 it("should render RestaurantCard component with Promoted Label", () => {
-  // Home Work - test HOC : withPromtedLabel()
+  const RestaurantCardPromoted = withPromtedLabel(RestaurantCard);
+  render(<RestaurantCardPromoted resData={PROMOTED_MOCK_DATA} />);
+  
+  const name = screen.getByText("Satti Babu Biryani");
+  
+  expect(name).toBeInTheDocument();
 });
